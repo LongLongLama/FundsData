@@ -135,8 +135,9 @@ async function handlePopulateDb() {
 </script>
 
 <template>
-  
-  <h1>Esercizio Vue - Funds Table</h1>
+
+
+  <h1 class="text-center text-5xl font-bold font-[Merriweather] text-gray-800 dark:text-gray-100 my-12 tracking-wide">Esercizio Vue - Funds Table</h1>
 
   <DataTable :items="records" @edit="handleEditRequest" @populate="handlePopulateDb" />
 
