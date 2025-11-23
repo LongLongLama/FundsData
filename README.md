@@ -87,7 +87,7 @@ Il progetto include una configurazione **docker-compose** che lancia:
 Da terminale, nella cartella del progetto:
 
 ```sh
-docker-compose up --build -V`
+docker-compose up --build -V
 ```
 La flag -V assicura che i volumi vengano ricreati e che il database sia pulito.
 
