@@ -135,7 +135,9 @@ async function handlePopulateDb() {
 </script>
 
 <template>
+  
   <h1>Esercizio Vue - Funds Table</h1>
+
   <DataTable :items="records" @edit="handleEditRequest" @populate="handlePopulateDb" />
 
   <EditForm v-if="recordToEdit" :record="recordToEdit" @save="handleUpdate" @cancel="cancelEdit" />

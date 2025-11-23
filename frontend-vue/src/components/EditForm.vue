@@ -101,12 +101,12 @@ function handleCancel() {
         <InputText v-model="localRecord.file_lang" />
       </div>
 
-      <div class="col-6">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Document date</label>
         <Calendar v-model="localRecord.doc_date" dateFormat="dd/mm/yy" showIcon />
       </div>
 
-      <!-- SECTION: Fees -->
+
       <div class="col-12 mt-4 mb-1 border-b surface-border pb-2">
         <h3 class="text-base font-semibold text-color">Costs</h3>
         <p class="text-xs text-color-secondary">
@@ -114,12 +114,12 @@ function handleCancel() {
         </p>
       </div>
 
-      <div class="col-6">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Caso Costi</label>
         <InputText v-model="localRecord.caso_costi" />
       </div>
 
-      <div class="col-6">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Entry Cost</label>
         <InputNumber
           v-model="localRecord.entry_costs"
@@ -129,12 +129,12 @@ function handleCancel() {
         />
       </div>
 
-      <div class="col-12">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Entry Cost log</label>
         <Textarea v-model="localRecord.entry_costs_log" rows="2" autoResize />
       </div>
 
-      <div class="col-6">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Exit Cost</label>
         <InputNumber
           v-model="localRecord.exit_costs"
@@ -144,7 +144,7 @@ function handleCancel() {
         />
       </div>
 
-      <div class="col-6">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Ongoing Cost</label>
         <InputNumber
           v-model="localRecord.ongoing_costs"
@@ -154,20 +154,22 @@ function handleCancel() {
         />
       </div>
 
-      <div class="col-12">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Exit Cost log</label>
         <Textarea v-model="localRecord.exit_costs_log" rows="2" autoResize />
       </div>
 
-      <div class="col-12">
+      <div class="flex flex-col">
         <label class="block mb-1 text-sm text-color">Ongoing Cost log</label>
         <Textarea v-model="localRecord.ongoing_costs_log" rows="2" autoResize />
       </div>
     </div>
 
     <template #footer>
+       <div style='padding-top: 1rem'>
       <Button label="Cancel" class="p-button-text" @click="handleCancel" />
       <Button label="Save changes" @click="handleSaveChanges" />
+      </div>
     </template>
   </Dialog>
 </template>
