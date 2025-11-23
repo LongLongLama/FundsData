@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build: frontend-vue/.
+    ports:
+      - 5173:80
+    volumes:
+      - ./frontend-vue/nginx.conf:/etc/nginx/nginx.conf
+    restart: "unless-stopped"
+  backend:
+    build: backend-net/FundsDetails/.
+    restart: "unless-stopped"
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=Pw_esercizio
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Pw_esercizio
+    volumes:
+      - ./Db/database.sql:/db/init.sql
+      - ./Db/init.sh:/entrypoint.sh
+    # ports:
+    #   - 1433:1433
+    restart: "unless-stopped"
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
