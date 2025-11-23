@@ -77,7 +77,7 @@ const formatCurrency = (value: number) => {
           </div>
 
           <span class="p-input-icon-left">
-            <i class="pi pi-search" />
+            <i class="pi pi-search" style="left: 1.25rem;" />
             <InputText v-model="filters['global'].value" placeholder="Cerca ovunque..." />
           </span>
         </div>
@@ -85,7 +85,7 @@ const formatCurrency = (value: number) => {
 
       <template #empty> No record found. </template>
 
-      <Column header="Edit" style="min-width: 8rem">
+      <Column header="Edit" style="min-width: 8rem" frozen>
         <template #body="slotProps">
           <Button
             icon="pi pi-pencil"
